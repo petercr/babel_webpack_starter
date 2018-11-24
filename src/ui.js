@@ -9,6 +9,7 @@ class UI {
 
   }
 
+  // Function to grab posts and display them 
   showPosts(posts) {
     let output = '';
 
@@ -32,6 +33,7 @@ class UI {
     this.post.innerHTML = output;
   }
 
+  // show alert after action has happened
   showAlert(message, className) {
     this.clearAlert();
 
@@ -54,6 +56,7 @@ class UI {
     }, 3000); 
   }
 
+  // Clear the alert
   clearAlert() {
     const currentAlert = document.querySelector('.alert');
 
@@ -63,9 +66,17 @@ class UI {
 
   }
 
+  // Clear all fields
   clearFields() {
     this.titleInput = '';
     this.bodyInput = '';
+  }
+
+  // Fill form to edit 
+  fillForm(data) {
+    this.titleInput.value = data.title;
+    this.bodyInput.value = data.body;
+    this.idInput.value = data.id;
   }
 }
 
